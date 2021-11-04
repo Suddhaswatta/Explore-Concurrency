@@ -1,4 +1,6 @@
+package create;
 public class Create {
+    
     public static void main(String[] args) throws Exception {
         int max = 2;
         for (int i = 0; i < max; i++) {
