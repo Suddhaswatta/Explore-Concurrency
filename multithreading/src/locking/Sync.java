@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sync {
-/** Very Complex Producer and Consumer **/
-    int LOWER_LIMIT ;
+    /**
+     * Very Complex Producer and Consumer
+     **/
+    int LOWER_LIMIT;
     int UPPER_LIMT;
     Object lock;
     List<Integer> lst;
@@ -15,8 +17,8 @@ public class Sync {
     public Sync(int LOWER_LIMIT, int UPPER_LIMT) {
         this.LOWER_LIMIT = LOWER_LIMIT;
         this.UPPER_LIMT = UPPER_LIMT;
-        this.lock=new Object();
-        this.lst=new ArrayList<>();
+        this.lock = new Object();
+        this.lst = new ArrayList<>();
     }
 
     public void producer() throws InterruptedException {
@@ -46,7 +48,7 @@ public class Sync {
                     System.out.println(String.format("Waiting for the producer"));
                     lock.wait();
                 } else {
-                    for (int i = LOWER_LIMIT; i < UPPER_LIMT ; i++) {
+                    for (int i = LOWER_LIMIT; i < UPPER_LIMT; i++) {
                         try {
                             lst.remove(lst.size() - 1);
                         } catch (Exception e) {
@@ -86,7 +88,7 @@ public class Sync {
     }
 
     public static void main(String[] args) {
-        Sync sync = new Sync(2,10);
+        Sync sync = new Sync(2, 10);
         sync.process();
     }
 
