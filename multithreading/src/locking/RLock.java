@@ -11,9 +11,13 @@ import static java.lang.String.*;
 
 class Worker {
 
-    private  Lock lock  = new ReentrantLock(true);
-    private  Condition condition = lock.newCondition();
+    private  Lock lock  ;
+    private  Condition condition ;
 
+    public Worker() {
+        this.lock = new ReentrantLock(true);
+        this.condition = lock.newCondition();
+    }
 
     public  void producer() throws InterruptedException{
 
