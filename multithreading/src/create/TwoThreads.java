@@ -37,8 +37,8 @@ public class TwoThreads {
             }
             System.out.println(
                     String.format("Thread %s has stopped ... with value %d\n",
-                    Thread.currentThread().getName(),
-                    counter));
+                            Thread.currentThread().getName(),
+                            counter));
         }, "Thread-2");
 
         t1.start();
