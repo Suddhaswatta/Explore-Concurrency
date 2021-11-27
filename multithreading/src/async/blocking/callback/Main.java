@@ -1,13 +1,13 @@
 package async.blocking.callback;
 import static java.lang.String.format;
 
-public class AsyncCallback {
+public class Main {
 
 
     public static void main(String[] args) {
 
         System.out.println("=========================== SYNC ========================================");
-        System.out.println(format("Excecution started on %s Thread", Thread.currentThread().getName()));
+        System.out.println(format("Execution started on %s Thread", Thread.currentThread().getName()));
 
         Double a = 2.0,b=0.0;
 
@@ -17,10 +17,10 @@ public class AsyncCallback {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(format("Excecution ended on %s Thread", Thread.currentThread().getName()));
+        System.out.println(format("Execution ended on %s Thread", Thread.currentThread().getName()));
 
         System.out.println("========================= ASYNC ========================================");
-        System.out.println(format("Excecution started on %s Thread", Thread.currentThread().getName()));
+        System.out.println(format("Execution started on %s Thread", Thread.currentThread().getName()));
 
         MathOperation.asyncDivide(a,b, (e, res) -> {
             if (e != null) {
@@ -29,7 +29,7 @@ public class AsyncCallback {
                 System.out.println("Result " + res);
             }
         });
-        System.out.println(format("Excecution ended on %s Thread", Thread.currentThread().getName()));
+        System.out.println(format("Execution ended on %s Thread", Thread.currentThread().getName()));
 
 
 
