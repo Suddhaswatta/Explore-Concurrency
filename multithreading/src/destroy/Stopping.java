@@ -1,4 +1,4 @@
-package create;
+package destroy;
 
 class Worker implements Runnable{
 
